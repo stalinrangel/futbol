@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   public clicked: boolean = true;
   public clicked1: boolean = false;
 
-  public themes: any='bg-gradient-danger';
+  public themes: any='bg-gradient-primary';
 
   ngOnInit() {
 

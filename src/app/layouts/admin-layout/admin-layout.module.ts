@@ -13,6 +13,10 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClubsComponent } from '../../pages/clubs/clubs.component';
+import { UsersComponent } from '../../pages/users/users.component';
+import { PlayersComponent } from '../../pages/players/players.component';
+import { PaysComponent } from '../../pages/pays/pays.component';
+import { InboxComponent } from '../../pages/inbox/inbox.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +34,11 @@ import { ClubsComponent } from '../../pages/clubs/clubs.component';
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    ClubsComponent
+    ClubsComponent,
+    UsersComponent,
+    PlayersComponent,
+    PaysComponent,
+    InboxComponent
   ]
 })
 

@@ -23,7 +23,7 @@ export class ThemesService {
     color1:''
   }*/
 
-  constructor(/*private domCtrl: DomController, @Inject(DOCUMENT) private document*/) { 
+  constructor(/*private domCtrl: DomController, @Inject(DOCUMENT) private document*/) {
   }
   /*
   setTheme(value1,value2):void {
