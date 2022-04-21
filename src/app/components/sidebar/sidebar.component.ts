@@ -22,7 +22,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/pays', title: 'Pagos',  icon:'ni-money-coins text-success', class: '' },
     { path: '/user-profile', title: 'Perfil',  icon:'ni-single-02 text-red', class: '' },
     { path: '/inbox', title: 'Mensajes',  icon:'ni-email-83 text-info', class: '' },
-    { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' }
+    /*{ path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' }*/
 ];
 
 @Component({
