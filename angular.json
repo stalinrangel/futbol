@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "argon-dashboard-angular": {
+    "futboll": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/admin/",
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
