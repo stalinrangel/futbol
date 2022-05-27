@@ -22,7 +22,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-5 col-md-7">
       <div class="card bg-secondary shadow border-0">
-        <div class="card-header bg-transparent pb-5">
+        <!--div class="card-header bg-transparent pb-5">
           <div class="text-muted text-center mt-2 mb-3"><small>Inicie sesion con</small></div>
           <div class="btn-wrapper text-center">
             <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
@@ -30,18 +30,21 @@
               <span class="btn-inner--text">Google</span>
             </a>
           </div>
-        </div>
+        </div-->
         <div class="card-body px-lg-5 py-lg-5">
-          <div class="text-center text-muted mb-4">
+          <!--div class="text-center text-muted mb-4">
             <small>O con tus credenciales</small>
-          </div>
+          </div-->
           <form role="form">
             <div class="form-group mb-3">
               <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <input class="form-control" placeholder="Email" type="email">
+                <input class="form-control" placeholder="Email" type="email" required name="email" [(ngModel)]="model.email" #email="ngModel">
+                <ng-container *ngIf="email.invalid && email.dirty">
+                  <span class="help is-danger">El campo e-mail es requerido</span>
+                </ng-container>
               </div>
             </div>
             <div class="form-group">
@@ -49,7 +52,10 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
-                <input class="form-control" placeholder="Password" type="password">
+                <input class="form-control" placeholder="Password" type="password" required name="password" [(ngModel)]="model.password" #password="ngModel">
+                <ng-container *ngIf="password.invalid && email.dirty">
+                  <span class="help is-danger">El campo password es requerido</span>
+                </ng-container>
               </div>
             </div>
             <div class="custom-control custom-control-alternative custom-checkbox">
@@ -59,7 +65,7 @@
               </label>
             </div>
             <div class="text-center">
-              <button type="button" class="btn btn-primary my-4" [routerLink]="['/dashboard']">Iniciar sesion</button>
+              <button type="button" class="btn btn-primary my-4" (click)="login()">Iniciar sesion</button>
             </div>
           </form>
         </div>
