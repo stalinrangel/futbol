@@ -5,7 +5,7 @@ import { UserModel } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserStorageService {
-  private key: string="ng-auth";
+  private key: string="ng-admin";
 
   constructor() { }
 
