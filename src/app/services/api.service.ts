@@ -23,12 +23,26 @@ export class ApiService {
     let headers = new HttpHeaders();
     console.log(this.user);
     headers = headers.set('Authorization', 'Bearer '+this.user.token);
-    return this.http.get(this.url+'/admin/user/list/type',{headers: headers})
+    return this.http.get(this.url+'/admin/user',{headers: headers})
   }
 
   clubs(): Observable<any> {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', 'Bearer '+this.user.token);
-    return this.http.get(this.url+'/admin/club/list/type',{headers: headers})
+    return this.http.get(this.url+'/admin/club',{headers: headers})
+  }
+
+  scootings(): Observable<any> {
+    let headers = new HttpHeaders();
+    console.log(this.user.token);
+    headers = headers.set('Authorization', 'Bearer '+this.user.token);
+    return this.http.get(this.url+'/admin/scout',{headers: headers})
+  }
+
+  signup_scooting(model: any): Observable<any> {
+    console.log(model)
+    let headers = new HttpHeaders();
+    headers = headers.set('Authorization', 'Bearer '+this.user.token);
+    return this.http.post(this.url+'/admin/scout', model,{headers: headers})
   }
 }

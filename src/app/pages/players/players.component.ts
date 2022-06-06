@@ -12,6 +12,7 @@ export class PlayersComponent implements OnInit {
   active = 1;
   active1 = 1;
   active2 = 1;
+
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
@@ -27,6 +28,14 @@ export class PlayersComponent implements OnInit {
 
   users(){
     let self=this;
+    this.api.players().subscribe({
+      next(data){
+        console.log(data)
+      },error(err){
+        console.log(err);
+      }
+    })
+
     this.api.clubs().subscribe({
       next(data){
         console.log(data)

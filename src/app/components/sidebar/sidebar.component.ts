@@ -18,7 +18,7 @@ export const ROUTES: RouteInfo[] = [
 
     { path: '/clubs', title: 'Clubs',  icon:'ni-trophy text-yellow', class: '' },
     { path: '/players', title: 'Jugadores',  icon:'ni-user-run text-blue', class: '' },
-    { path: '/users', title: 'Usuarios',  icon:'ni-circle-08 text-info', class: '' },
+    { path: '/users', title: 'Scooting',  icon:'ni-circle-08 text-info', class: '' },
     { path: '/pays', title: 'Pagos',  icon:'ni-money-coins text-success', class: '' },
     { path: '/user-profile', title: 'Perfil',  icon:'ni-single-02 text-red', class: '' },
     { path: '/inbox', title: 'Mensajes',  icon:'ni-email-83 text-info', class: '' },

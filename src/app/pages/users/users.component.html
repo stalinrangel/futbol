@@ -20,15 +20,16 @@
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="javascript:void(0)">
-                <img src="assets/img/theme/cristiano-ronaldo.jpg" class="rounded-circle">
+                <input type="file" #file (change) = "onFileChange($event)" style="display:none" />
+                <img src="{{imagen}}" class="rounded-circle" (click)="file.click()">
               </a>
             </div>
           </div>
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">En linea</a>
-            <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Mensaje</a>
+            <!--a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">En linea</a>
+            <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Mensaje</a-->
           </div>
         </div>
         <div class="card-body pt-0 pt-md-4">
@@ -36,33 +37,33 @@
             <div class="col">
               <br>
               <form>
-                <h6 class="heading-small text-muted mb-4">Informacion del usuario</h6>
+                <h6 class="heading-small text-muted mb-4">Informacion del Scooting</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-username">Usuario</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="Usuario 1">
+                        <label class="form-control-label" for="input-username">Nombres</label>
+                        <input type="text" class="form-control form-control-alternative"  name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" placeholder="Nombres" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Correo</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="usuario1@example.com">
+                        <label class="form-control-label" for="input-email">Apellidos</label>
+                        <input type="text" class="form-control form-control-alternative"  name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" placeholder="Apellidos" required>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-first-name">Nombre</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Usuario 1">
+                        <label class="form-control-label" for="input-first-name">Email</label>
+                        <input type="email" class="form-control form-control-alternative"  name="email" [(ngModel)]="model.email" #email="ngModel" placeholder="Email" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-last-name">Apellidos</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Casillas">
+                        <label class="form-control-label" for="input-last-name">Contrasena</label>
+                        <input type="text" class="form-control form-control-alternative"  name="password" [(ngModel)]="model.password" #password="ngModel" placeholder="password" required>
                       </div>
                     </div>
                   </div>
@@ -72,43 +73,34 @@
                 <h6 class="heading-small text-muted mb-4">Informacion de contacto</h6>
                 <div class="pl-lg-4">
                   <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-address">Direccion</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
                     <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Telefono</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="4141243431">
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-country">Pais</label>
-                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="Espana">
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-country">Codigo postal</label>
-                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="01042">
+                        <input type="text" class="form-control form-control-alternative"  name="phone" [(ngModel)]="model.phone" #phone="ngModel" placeholder="phone" required>
                       </div>
                     </div>
                   </div>
                 </div>
                 <hr class="my-4" />
-                <!-- Description -->
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <div class="text-center">
+                          <button type="button" class="btn btn-primary my-4" (click)="register()">Registrar Scooting</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Description >
                 <h6 class="heading-small text-muted mb-4">Mi informacion a mostrar</h6>
                 <div class="pl-lg-4">
                   <div class="form-group">
                     <label>Informacion</label>
                     <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">Usuario.</textarea>
                   </div>
-                </div>
+                </div-->
               </form>
             </div>
           </div>
