@@ -5,8 +5,7 @@
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-lg-7 col-md-10">
-        <h1 class="display-2 text-white">Usuarios</h1>
-        <p class="text-white mt-0 mb-5">Aqui encontraras la informacion resumida</p>
+        <h1 class="display-2 text-white">Scooting</h1>
         <!--a href="#!" class="btn btn-info">Edit profile</a-->
       </div>
     </div>
@@ -113,7 +112,7 @@
         <div class="card-header bg-white border-0">
           <div class="row align-items-center">
             <div class="col-8">
-              <h3 class="mb-0">Mi club</h3>
+              <h3 class="mb-0">Scooting</h3>
             </div>
             <div class="col-4 text-right">
               <!--a href="#!" class="btn btn-sm btn-primary">Settings</a-->
@@ -139,252 +138,35 @@
                                 <table class="table align-items-center table-flush">
                                   <thead class="thead-light">
                                     <tr>
+                                      <th scope="col"></th>
                                       <th scope="col">Nombre</th>
                                       <th scope="col">Email</th>
-                                      <th scope="col">Estado</th>
-                                      <th scope="col">Pais</th>
-                                      <th scope="col">Completion</th>
-                                      <th scope="col"></th>
+                                      <th scope="col">Telefono</th>
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
+                                    <tr *ngFor="let Item of scootings" (click)="info(Item)">
                                       <th scope="row">
                                         <div class="media align-items-center">
-                                          <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                                            <img alt="Image placeholder" src="../assets/img/theme/usuario.jpg">
+                                          <a class="avatar rounded-circle mr-3">
+                                            <img alt="Image placeholder" src="{{Item.imagen}}">
                                           </a>
-                                          <div class="media-body">
-                                            <span class="mb-0 text-sm">Usuario 1</span>
-                                          </div>
                                         </div>
                                       </th>
                                       <td>
-                                        ojeador1@futbol.com
-                                      </td>
-                                      <td>
                                         <span class="badge badge-dot mr-4">
-                                          <i class="bg-warning"></i> Activo
+                                          <i class="bg-warning"></i> {{Item.firstname}} {{Item.lastname}}
                                         </span>
-                                      </td>
-                                      <td>
-                                        <div class="media-body">
-                                          <span class="mb-0 text-sm">Francia</span>
-                                        </div>
-                                      </td>
-                                      <td>
-                                        <div class="d-flex align-items-center">
-                                          <span class="mr-2">60%</span>
-                                          <div>
-                                            <div class="progress">
-                                              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </td>
-                                      <td class="text-right">
-                                        <div ngbDropdown placement="bottom-right">
-                                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">
-                                        <div class="media align-items-center">
-                                          <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                                            <img alt="Image placeholder" src="../assets/img/theme/oj.jpeg">
-                                          </a>
-                                          <div class="media-body">
-                                            <span class="mb-0 text-sm">Usuario 2</span>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <td>
-                                        ojeador2@futbol.com
-                                      </td>
-                                      <td>
-                                        <span class="badge badge-dot mr-4">
-                                          <i class="bg-warning"></i> Inactivo
-                                        </span>
-                                      </td>
-                                      <td>
-                                        <div class="media-body">
-                                          <span class="mb-0 text-sm">Italia</span>
-                                        </div>
-                                      </td>
-                                      <td>
-                                        <div class="d-flex align-items-center">
-                                          <span class="mr-2">60%</span>
-                                          <div>
-                                            <div class="progress">
-                                              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </td>
-                                      <td class="text-right">
-                                        <div ngbDropdown placement="bottom-right">
-                                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">
-                                        <div class="media align-items-center">
-                                          <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                                            <img alt="Image placeholder" src="../assets/img/theme/oj.jpeg">
-                                          </a>
-                                          <div class="media-body">
-                                            <span class="mb-0 text-sm">Usuario 3</span>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <td>
-                                        ojeador3@futbol.com
-                                      </td>
-                                      <td>
-                                        <span class="badge badge-dot mr-4">
-                                          <i class="bg-warning"></i> Activo
-                                        </span>
-                                      </td>
-                                      <td>
-                                        <div class="media-body">
-                                          <span class="mb-0 text-sm">Portugal</span>
-                                        </div>
-                                      </td>
-                                      <td>
-                                        <div class="d-flex align-items-center">
-                                          <span class="mr-2">60%</span>
-                                          <div>
-                                            <div class="progress">
-                                              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </td>
-                                      <td class="text-right">
-                                        <div ngbDropdown placement="bottom-right">
-                                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">
-                                        <div class="media align-items-center">
-                                          <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                                            <img alt="Image placeholder" src="../assets/img/theme/oj.jpeg">
-                                          </a>
-                                          <div class="media-body">
-                                            <span class="mb-0 text-sm">Usuario 4</span>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <td>
-                                        ojeador4@futbol.com
-                                      </td>
-                                      <td>
-                                        <span class="badge badge-dot mr-4">
-                                          <i class="bg-warning"></i> Activo
-                                        </span>
-                                      </td>
-                                      <td>
-                                        <div class="media-body">
-                                          <span class="mb-0 text-sm">Espana</span>
-                                        </div>
-                                      </td>
-                                      <td>
-                                        <div class="d-flex align-items-center">
-                                          <span class="mr-2">60%</span>
-                                          <div>
-                                            <div class="progress">
-                                              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </td>
-                                      <td class="text-right">
-                                        <div ngbDropdown placement="bottom-right">
-                                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">
-                                        <div class="media align-items-center">
-                                          <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                                            <img alt="Image placeholder" src="../assets/img/theme/oj.jpeg">
-                                          </a>
-                                          <div class="media-body">
-                                            <span class="mb-0 text-sm">Usuario 5</span>
-                                          </div>
-                                        </div>
-                                      </th>
-                                      <td>
-                                        ojeador5@futbol.com
-                                      </td>
-                                      <td>
-                                        <span class="badge badge-dot mr-4">
-                                          <i class="bg-warning"></i> Activo
-                                        </span>
-                                      </td>
-                                      <td>
-                                        <div class="media-body">
-                                          <span class="mb-0 text-sm">Francia</span>
-                                        </div>
-                                      </td>
-                                      <td>
-                                        <div class="d-flex align-items-center">
-                                          <span class="mr-2">60%</span>
-                                          <div>
-                                            <div class="progress">
-                                              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </td>
-                                      <td class="text-right">
-                                        <div ngbDropdown placement="bottom-right">
-                                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
 
+                                      </td>
+                                      <td>
+                                        {{Item.email}}
+                                      </td>
+                                      <td>
+                                        {{Item.phone}}
+                                      </td>
                                   </tbody>
+
                                 </table>
                               </div>
                               <div class="card-footer py-4">

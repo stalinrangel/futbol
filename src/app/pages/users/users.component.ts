@@ -14,6 +14,7 @@ export class UsersComponent implements OnInit {
   active = 1;
   active1 = 1;
   active2 = 1;
+  public scootings:any=[];
   public model: ScootingModel= new ScootingModel();
   public formData = new FormData();
   public imagen:any="assets/img/theme/upload.png";
@@ -35,11 +36,28 @@ export class UsersComponent implements OnInit {
     this.api.scootings().subscribe({
       next(data){
         console.log(data)
+        self.scootings=data;
+        for (let i = 0; i < self.scootings.length; i++) {
+          if (self.scootings[i].picture!=null) {
+            self.scootings[i].imagen="https://api.ronnie.es/uploads/scout/"+self.scootings[i].id+"/profile/"+self.scootings[i].picture;
+            console.log(self.scootings)
+          }else{
+            self.scootings[i].imagen="../assets/img/theme/usuario.jpg";
+          }
+        }
       },error(err){
         console.log(err);
       }
     })
   }
+
+  info(scooting){
+    console.log(scooting)
+    this.model=scooting;
+    this.imagen=scooting.imagen;
+  }
+
+
 
   register(){
 
@@ -56,6 +74,8 @@ export class UsersComponent implements OnInit {
     this.api.signup_scooting(this.formData).subscribe({
       next(data){
         console.log(data);
+        console.log(self.model)
+        self.scootings.push(self.model);
         //self.router.navigate(['/activar']);
       },error(err){
         console.log(err);
